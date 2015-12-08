@@ -1,0 +1,52 @@
+{
+  "group": {
+    "name": {
+      "required": true,
+      "uniq": true,
+      "regexp": "^[a-zA-Z\\s_-\\d]+$"
+    },
+    "members": {
+      "children": "member"
+    },
+    "owner": {
+      "instance": "member"
+    }
+  },
+  "member": {
+    "name": {
+      "required": true,
+      "uniq": true,
+      "regexp": "^[a-zA-Z\\s_-\\d]+$"
+    },
+    "group": {
+      "parent": "group"
+    },
+    "attends": {
+      "children": "attend"
+    }
+  },
+  "attend": {
+    "date": {
+      "required": true,
+      "uniq": true,
+      "regexp": "^\\d\\d\\d\\d-\\d\\d-\\d\\d$"
+    },
+    "member": {
+      "uniq": true,      
+      "parent": "member"
+    },
+    "start": {
+      "required": true,
+      "uniq": true,      
+      "regexp": "^\\d\\d:\\d\\d$"
+    },
+    "end": {
+      "required": true,
+      "uniq": true,      
+      "regexp": "^\\d\\d:\\d\\d$"
+    },
+    "reason": {
+      "regexp": "^[a-zA-Z\\s_-\\d\\.\\,\\'\\\"\\[\\]\\/]*$"
+    }
+  }
+}
