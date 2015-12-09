@@ -16,33 +16,31 @@
     "name": {
       "required": true,
       "uniq": true,
-      "regexp": "^[a-zA-Z\\s_-\\d]+$"
+      "regexp": "^[a-zA-Z\\s_-\\d\\.]+$"
     },
     "group": {
       "parent": "group"
     },
-    "attends": {
-      "children": "attend"
+    "absents": {
+      "children": "absent"
     }
   },
-  "attend": {
+  "absent": {
+    "member": {
+      "uniq": true,      
+      "parent": "member"
+    },
     "date": {
       "required": true,
       "uniq": true,
       "regexp": "^\\d\\d\\d\\d-\\d\\d-\\d\\d$"
     },
-    "member": {
-      "uniq": true,      
-      "parent": "member"
-    },
     "start": {
       "required": true,
-      "uniq": true,      
       "regexp": "^\\d\\d:\\d\\d$"
     },
     "end": {
       "required": true,
-      "uniq": true,      
       "regexp": "^\\d\\d:\\d\\d$"
     },
     "reason": {
