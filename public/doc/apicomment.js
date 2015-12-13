@@ -14,9 +14,9 @@
 /**
  * @api {post} /groups Create instance
  * @apiGroup Group
- * @apiParam {String} name 
+ * @apiParam {String} name Group name
  * 
- * @apiParam {Object} owner member id
+ * @apiParam {Object} owner Members id
 
  * 
  */
@@ -28,9 +28,9 @@
  * @apiSuccess {String} id 
  * @apiSuccess {String} createdAt 
  * @apiSuccess {String} updatedAt 
- * @apiSuccess {String} name 
- * @apiSuccess {Object} members linking of member
- * @apiSuccess {Object} owner linking of member
+ * @apiSuccess {String} name Group name
+ * @apiSuccess {Object} members Members id
+ * @apiSuccess {Object} owner Members id
 
  */
 
@@ -50,9 +50,9 @@
 /**
  * @api {post} /groups/:id Update instance
  * @apiGroup Group
- * @apiParam {String} name 
+ * @apiParam {String} name Group name
  * 
- * @apiParam {Object} owner member id
+ * @apiParam {Object} owner Members id
 
  * 
  */
@@ -87,7 +87,7 @@
 /**
  * @api {post} /members Create instance
  * @apiGroup Member
- * @apiParam {String} name 
+ * @apiParam {String} name Member name
  * @apiParam {String} group 
  * 
 
@@ -101,7 +101,7 @@
  * @apiSuccess {String} id 
  * @apiSuccess {String} createdAt 
  * @apiSuccess {String} updatedAt 
- * @apiSuccess {String} name 
+ * @apiSuccess {String} name Member name
  * @apiSuccess {String} group 
  * @apiSuccess {Object} absents linking of absent
 
@@ -123,7 +123,7 @@
 /**
  * @api {post} /members/:id Update instance
  * @apiGroup Member
- * @apiParam {String} name 
+ * @apiParam {String} name Member name
  * @apiParam {String} group 
  * 
 
@@ -140,6 +140,63 @@
 /**
  * @api {delete} /members/:id Delete instance
  * @apiGroup Member
+ * 
+ * 
+ */
+
+/**
+ * @api {get} /stats Get collection
+ * @apiGroup Stat
+ * 
+ * @apiSuccess {Number} offset
+ * @apiSuccess {Number} limit
+ * @apiSuccess {Number} size
+ * @apiSuccess {String} first
+ * @apiSuccess {String} last
+ * @apiSuccess {Object[]} items Array of Stat instance
+
+ */
+
+/**
+ * @api {post} /stats Create instance
+ * @apiGroup Stat
+ * @apiParam {String} key 
+ * @apiParam {String} text 
+
+ * 
+ */
+
+/**
+ * @api {get} /stats/:id Get instance
+ * @apiGroup Stat
+ * 
+ * @apiSuccess {String} id 
+ * @apiSuccess {String} createdAt 
+ * @apiSuccess {String} updatedAt 
+ * @apiSuccess {String} key 
+ * @apiSuccess {String} text 
+
+ */
+
+/**
+ * @api {post} /stats/:id Update instance
+ * @apiGroup Stat
+ * @apiParam {String} key 
+ * @apiParam {String} text 
+
+ * 
+ */
+
+/**
+ * @api {delete} /stats Delete collection
+ * @apiGroup Stat
+ * 
+ * 
+ */
+
+/**
+ * @api {delete} /stats/:id Delete instance
+ * @apiGroup Stat
  * 
  * 
  */
@@ -162,6 +219,7 @@
  * @apiGroup Absent
  * @apiParam {String} member 
  * @apiParam {String} date 
+ * @apiParam {Object} stat stat id
  * @apiParam {String} start 
  * @apiParam {String} end 
  * @apiParam {String} reason 
@@ -178,6 +236,7 @@
  * @apiSuccess {String} updatedAt 
  * @apiSuccess {String} member 
  * @apiSuccess {String} date 
+ * @apiSuccess {Object} stat linking of stat
  * @apiSuccess {String} start 
  * @apiSuccess {String} end 
  * @apiSuccess {String} reason 
@@ -189,6 +248,7 @@
  * @apiGroup Absent
  * @apiParam {String} member 
  * @apiParam {String} date 
+ * @apiParam {Object} stat stat id
  * @apiParam {String} start 
  * @apiParam {String} end 
  * @apiParam {String} reason 

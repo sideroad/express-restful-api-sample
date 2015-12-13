@@ -3,20 +3,24 @@
     "name": {
       "required": true,
       "uniq": true,
-      "regexp": "^[a-zA-Z\\s_-\\d]+$"
+      "regexp": "^[a-zA-Z\\s_-\\d]+$",
+      "desc": "Group name"
     },
     "members": {
-      "children": "member"
+      "children": "member",
+      "desc": "Members id"
     },
     "owner": {
-      "instance": "member"
+      "instance": "member",
+      "desc": "Members id"
     }
   },
   "member": {
     "name": {
       "required": true,
       "uniq": true,
-      "regexp": "^[a-zA-Z\\s_-\\d\\.]+$"
+      "regexp": "^[a-zA-Z\\s_-\\d\\.]+$",
+      "desc": "Member name"
     },
     "group": {
       "parent": "group.members"
@@ -25,8 +29,18 @@
       "children": "absent"
     }
   },
+  "stat": {
+    "key": {
+      "required": true,
+      "uniq": true      
+    },
+    "text": {
+      "required": true
+    }
+  },
   "absent": {
     "member": {
+      "required": true,
       "uniq": true,      
       "parent": "member.absents"
     },
@@ -34,6 +48,11 @@
       "required": true,
       "uniq": true,
       "regexp": "^\\d\\d\\d\\d-\\d\\d-\\d\\d$"
+    },
+    "stat": {
+      "required": true,
+      "uniq": true,
+      "instance": "stat"
     },
     "start": {
       "required": true,

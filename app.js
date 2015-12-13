@@ -27,13 +27,19 @@ app.use('/', creator.router({
 
 creator.doc({
   "name": "RESTful API",
-  "version": "1.0.0",
-  "description": "apidoc example project",
-  "title": "Custom apiDoc browser title",
+  "version": JSON.parse( fs.readFileSync('./package.json') ).version,
+  "description": "API specification",
+  "title": "API doc",
   "url" : "http://express-restful-api-sample.herokuapp.com",
   "sampleUrl": "http://express-restful-api-sample.herokuapp.com",
   "template": {
-    "withGenerator": true
+    "withCompare": false,
+    "withGenerator": true,
+    "jQueryAjaxSetup": {
+      xhrFields: {
+         withCredentials: true
+      }
+    }
   },
   "dest": __dirname + '/public/doc'
 });
