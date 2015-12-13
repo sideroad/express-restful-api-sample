@@ -19,7 +19,7 @@
       "regexp": "^[a-zA-Z\\s_-\\d\\.]+$"
     },
     "group": {
-      "parent": "group"
+      "parent": "group.members"
     },
     "absents": {
       "children": "absent"
@@ -28,7 +28,7 @@
   "absent": {
     "member": {
       "uniq": true,      
-      "parent": "member"
+      "parent": "member.absents"
     },
     "date": {
       "required": true,

@@ -21,7 +21,7 @@ app.use(expressValidator([]));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', creator({
-    redis: process.env.REDIS_URL,
+    mongo: process.env.MONGO_URL,
     scheme: JSON.parse(routerJSON)
 }));
 

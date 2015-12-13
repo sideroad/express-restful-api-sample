@@ -13,59 +13,16 @@ npm install .
 
 ### Config variables
 
-express-heroku-restful-api-sample using Redis.
-Please set variables such as below.
+express-heroku-restful-api-sample using Mongo.
+Please set mongo connection URL variables such as below.
 
-|Key      |Value                                                                                      |
-|:--------|:------------------------------------------------------------------------------------------|
-|REDIS_URL|redis://rediscloud:xxxxxxxxxxxxxx@pub-redis-xxxxxx.us-east-1-x.x.ec2.redislabs.com:xxxxxxxx|
+|Key      |Value                                                 |
+|:--------|:-----------------------------------------------------|
+|MONGO_URL|mongodb://id:password@xxxxxx.mongolab.com:xxxxx/xxxxxx|
 
 ### router.json
+[Sample JSON file](router.json)
 
-```json
-{
-  "group": {
-    "name": {
-      "required": true,
-      "uniq": true,
-      "regexp": "^[a-zA-Z\\s_-\\d]+$"
-    },
-    "members": {
-      "children": "member"
-    },
-    "owner": {
-      "instance": "member"
-    }
-  },
-  "member": {
-    "name": {
-      "required": true,
-      "uniq": true,
-      "regexp": "^[a-zA-Z\\s_-\\d]+$"
-    },
-    "group": {
-      "parent": "group"
-    },
-    "attends": {
-      "children": "attend"
-    }
-  },
-  "attend": {
-    "date": {
-      "required": true,
-      "uniq": true,
-      "regexp": "^\\d\\d\\d\\d-\\d\\d-\\d\\dT\\d\\d:\\d\\d:\\d\\d\\.\\d+Z$"
-    },
-    "member": {
-      "uniq": true,
-      "parent": "member"
-    },
-    "reason": {
-      "regexp": "^[a-zA-Z\\s_-\\d\\.\\,\\'\\\"\\[\\]\\/]*$"
-    }
-  }
-}
-```
 
 ## Start Express
 
