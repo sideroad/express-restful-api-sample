@@ -20,10 +20,23 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(expressValidator([]));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/', creator({
+app.use('/', creator.router({
     mongo: process.env.MONGO_URL,
     scheme: JSON.parse(routerJSON)
 }));
+
+creator.doc({
+  "name": "RESTful API",
+  "version": "1.0.0",
+  "description": "apidoc example project",
+  "title": "Custom apiDoc browser title",
+  "url" : "http://express-restful-api-sample.herokuapp.com",
+  "sampleUrl": "http://express-restful-api-sample.herokuapp.com",
+  "template": {
+    "withGenerator": true
+  },
+  "dest": __dirname + '/public/doc'
+});
 
 
 module.exports = app;
