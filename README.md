@@ -30,4 +30,7 @@ Please set mongo connection URL variables such as below.
 DEBUG=express:* node ./bin/www
 ```
 
-https://www.getpostman.com/collections/b5dc739e617c1c3e50a4
+## API Doc
+API document will be generated automatically
+
+http://express-restful-api-sample.herokuapp.com/doc/
