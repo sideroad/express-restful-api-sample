@@ -70,6 +70,66 @@
     },
     {
       "headers": "",
+      "url": "http://express-restful-api-sample.herokuapp.com/members",
+      "method": "POST",
+      "dataMode": "urlencoded",      
+      "data": [
+        {
+          "key": "name",
+          "value": "nab",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "group",
+          "value": "uxd",
+          "type": "text",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "headers": "",
+      "url": "http://express-restful-api-sample.herokuapp.com/members",
+      "method": "POST",
+      "dataMode": "urlencoded",      
+      "data": [
+        {
+          "key": "name",
+          "value": "fuji",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "group",
+          "value": "platform",
+          "type": "text",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "headers": "",
+      "url": "http://express-restful-api-sample.herokuapp.com/members",
+      "method": "POST",
+      "dataMode": "urlencoded",      
+      "data": [
+        {
+          "key": "name",
+          "value": "iida",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "group",
+          "value": "platform",
+          "type": "text",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "headers": "",
       "url": "http://express-restful-api-sample.herokuapp.com/stats",
       "method": "POST",
       "dataMode": "urlencoded",      
