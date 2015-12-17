@@ -30,8 +30,8 @@ creator.doc({
   "version": JSON.parse( fs.readFileSync('./package.json') ).version,
   "description": "API specification",
   "title": "API doc",
-  "url" : "http://express-restful-api-sample.herokuapp.com",
-  "sampleUrl": "http://express-restful-api-sample.herokuapp.com",
+  "url" : "//express-restful-api-sample.herokuapp.com",
+  "sampleUrl": "//express-restful-api-sample.herokuapp.com",
   "template": {
     "withCompare": false,
     "withGenerator": true,
